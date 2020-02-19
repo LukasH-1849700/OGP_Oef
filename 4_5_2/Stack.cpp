@@ -2,7 +2,7 @@
 #include <iostream>
 
 template <typename T>
-Stack<T>::Stack(int size) : m_size{ size }, m_elems{std::vector<T> elems (size)}
+Stack<T>::Stack()
 {
 	std::cout << "constructing\n";
 }
@@ -10,7 +10,7 @@ Stack<T>::Stack(int size) : m_size{ size }, m_elems{std::vector<T> elems (size)}
 template <typename T>
 Stack<T>::~Stack()
 {
-	delete[] m_elems;
+	m_elems.clear();
 	std::cout << "destructing\n";
 }
 
@@ -26,33 +26,29 @@ void Stack<T>::print()
 template <typename T>
 void Stack<T>::push(T c)
 {
-	if (!is_full()) {
-		++m_top;
-		m_elems.push_back(c);
-	}
+	++m_top;
+	m_elems.push_back(c);
 }
 
 template <typename T>
 T Stack<T>::pop()
 {
+	T c{};
+
 	if (!is_empty()) {
-		T c = m_elems.pop_back();
+		c = m_elems.back();
+		m_elems.pop_back();
 		--m_top;
-		return c;
 	}
-	else
-		return nullptr;
+
+	return c;
 }
 
 
 template <typename T>
 bool Stack<T>::is_empty()
 {
-	return m_top == -1;
+	return m_elems.empty();
 }
 
-template <typename T>
-bool Stack<T>::is_full()
-{
-	return m_top == m_size - 1;
-}
+template class Stack<char>;

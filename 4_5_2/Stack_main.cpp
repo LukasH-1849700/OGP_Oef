@@ -6,17 +6,11 @@ static void verify_nesting(const char expression[])
 {
     int l = strlen(expression);
 
-    Stack<char> s{8};
+    Stack<char> s{};
 
     for (int i = 0; i < l; ++i) {
         if (expression[i] == '(') {
-            if (s.is_full()) {
-                std::cout << "Stack too small!\n";
-                return;
-            }
-            else {
-                s.push('(');
-            }
+            s.push('(');
         }
         else if (expression[i] == ')') {
             if (s.is_empty()) {

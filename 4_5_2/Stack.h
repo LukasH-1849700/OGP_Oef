@@ -5,7 +5,7 @@ template <typename T>
 class Stack
 {
 public:
-	Stack(int size);
+	Stack();
 	~Stack();
 	void print();
 
@@ -13,10 +13,9 @@ public:
 	T pop();
 
 	bool is_empty();
-	bool is_full();
 
 private:
-	int m_top{ -1 }, m_size;
+	int m_top{ -1 };
 	std::vector<T> m_elems;
 
 };

@@ -7,12 +7,12 @@ Complex::Complex(int r, int i) : m_real{r}, m_imaginary{i}
 }
 
 
-int Complex::get_real()
+int Complex::get_real() const
 {
 	return m_real;
 }
 
-int Complex::get_imaginary()
+int Complex::get_imaginary() const
 {
 	return m_imaginary;
 }
@@ -33,7 +33,7 @@ void Complex::write_complex()
 	std::cout << m_real << " + " << m_imaginary << "*i\n";
 }
 
-void Complex::add_complex(Complex c)
+void Complex::add_complex(const Complex &c)
 {
 	m_real += c.get_real();
 	m_imaginary += c.get_imaginary();

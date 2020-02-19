@@ -6,7 +6,7 @@ static void verify_nesting(const char expression[])
 {
     int l = strlen(expression);
 
-    Stack s{8};
+    Stack<char> s{8};
 
     for (int i = 0; i < l; ++i) {
         if (expression[i] == '(') {

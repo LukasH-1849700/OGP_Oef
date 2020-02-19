@@ -1,52 +1,58 @@
 #include "Stack.h"
 #include <iostream>
 
-Stack::Stack(int size) : m_size{ size }, m_elems{new char[size]}
+template <typename T>
+Stack<T>::Stack(int size) : m_size{ size }, m_elems{std::vector<T> elems (size)}
 {
 	std::cout << "constructing\n";
 }
 
-Stack::~Stack()
+template <typename T>
+Stack<T>::~Stack()
 {
 	delete[] m_elems;
 	std::cout << "destructing\n";
 }
 
 
-void Stack::print()
+template <typename T>
+void Stack<T>::print()
 {
-	for (int i = 0; i <= m_top; ++i)
-		std::cout << m_elems[i];
+	for (const auto &e:m_elems)
+		std::cout << e;
 }
 
 
-void Stack::push(char c)
+template <typename T>
+void Stack<T>::push(T c)
 {
 	if (!is_full()) {
 		++m_top;
-		m_elems[m_top] = c;
+		m_elems.push_back(c);
 	}
 }
 
-char Stack::pop()
+template <typename T>
+T Stack<T>::pop()
 {
-	char c = '\0';
-
 	if (!is_empty()) {
-		c = m_elems[m_top];
+		T c = m_elems.pop_back();
 		--m_top;
+		return c;
 	}
-
-	return c;
+	else
+		return nullptr;
 }
 
 
-bool Stack::is_empty()
+template <typename T>
+bool Stack<T>::is_empty()
 {
 	return m_top == -1;
 }
 
-bool Stack::is_full()
+template <typename T>
+bool Stack<T>::is_full()
 {
 	return m_top == m_size - 1;
 }

@@ -1,5 +1,7 @@
 #pragma once
+#include <vector>
 
+template <typename T>
 class Stack
 {
 public:
@@ -7,14 +9,14 @@ public:
 	~Stack();
 	void print();
 
-	void push(char c);
-	char pop();
+	void push(T c);
+	T pop();
 
 	bool is_empty();
 	bool is_full();
 
 private:
 	int m_top{ -1 }, m_size;
-	char *m_elems;
+	std::vector<T> m_elems;
 
 };

@@ -2,8 +2,9 @@
 #include <iostream>
 
 template <typename T>
-Stack<T>::Stack(int size) : m_size{ size }, m_elems{std::vector<T> elems (size)}
+Stack<T>::Stack(int size) : m_size{ size }
 {
+	m_elems.resize(size);
 	std::cout << "constructing\n";
 }
 

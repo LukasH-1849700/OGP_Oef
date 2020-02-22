@@ -141,10 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="543_main.cpp" />
+    <ClCompile Include="AddressBook.cpp" />
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="Date.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddressBook.h" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="Date.h" />
   </ItemGroup>

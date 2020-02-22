@@ -1,36 +1,48 @@
 #include "Date.h"
+#include <string>
 
-Date::Date(int day, int month, int year) : m_dag{ day }, m_maand{ month }, m_jaar{ year }
+Date::Date(int day, int month, int year) : m_day{ day }, m_month{ month }, m_year{ year }
 {
 	// Constructor yeets the date when building instead of after being built
 }
 
-int Date::getDag() const
+int Date::get_day() const
 {
-	return m_dag;
+	return m_day;
 }
 
-int Date::getMaand() const
+int Date::get_month() const
 {
-	return m_maand;
+	return m_month;
 }
 
-int Date::getJaar() const
+int Date::get_year() const
 {
-	return m_jaar;
+	return m_year;
 }
 
-void Date::setDag(int dag)
+void Date::set_day(int day)
 {
-	m_dag = dag;
+	m_day = day;
 }
 
-void Date::setMaand(int maand)
+void Date::set_month(int month)
 {
-	m_maand = maand;
+	m_month = month;
 }
 
-void Date::setJaar(int jaar)
+void Date::set_year(int year)
 {
-	m_jaar = jaar;
+	m_year = year;
+}
+
+std::string Date::get_date()
+{
+	std::string s;
+	s += std::to_string(m_day);
+	s += '/';
+	s += std::to_string(m_month);
+	s += '/';
+	s += std::to_string(m_year);
+	return s;
 }

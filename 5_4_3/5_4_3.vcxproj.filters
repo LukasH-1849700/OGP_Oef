@@ -24,12 +24,18 @@
     <ClCompile Include="543_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddressBook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddressBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

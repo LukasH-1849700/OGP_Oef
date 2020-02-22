@@ -1,19 +1,23 @@
 #pragma once
+#include <string>
+
 class Date
 {
 public:
 	Date(int day, int month, int year);
 	Date() = default;
 
-	int getDag() const;
-	int getMaand() const;
-	int getJaar() const;
+	int get_day() const;
+	int get_month() const;
+	int get_year() const;
 
-	void setDag(int dag);
-	void setMaand(int maand);
-	void setJaar(int jaar);
+	void set_day(int day);
+	void set_month(int month);
+	void set_year(int year);
+
+	std::string get_date();
 
 private:
-	int m_dag, m_maand, m_jaar;
+	int m_day, m_month, m_year;
 
 };

@@ -23,4 +23,5 @@ void AddressBook::clear_contacts()
 {
 	for (Contact* &i : m_contacts)
 		delete i;
+	m_contacts.clear();
 }
